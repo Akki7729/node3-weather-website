@@ -9,6 +9,8 @@ const { rawListeners } = require('process')
 const geocoding = require("../utils/geocode")
 const weather = require("../utils/forcast")
 
+const port = process.env.PORT || 3000
+
 //calling express function
 const app = express()
 //express looks for views directory for view engine files, it can be changed using below code
@@ -88,7 +90,7 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000 , () => { 
-    console.log( "server is up on port 3000")
+app.listen(port , () => { 
+    console.log( "server is up on port" + port)
 })
 
